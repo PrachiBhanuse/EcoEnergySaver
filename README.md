@@ -1,9 +1,6 @@
 [![License](https://img.shields.io/badge/License-Apache2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Community](https://img.shields.io/badge/Join-Community-blue)](https://developer.ibm.com/callforcode/solutions/projects/get-started/)
 
-
-_New to Git and GitHub? This free online course will get you up to speed quickly: [Getting Started with Git and GitHub](https://www.coursera.org/learn/getting-started-with-git-and-github)_.
-
-# Replace this heading with your team/submission name
+# EcoEnergySaver
 
 - [Project summary](#project-summary)
   - [The issue we are hoping to solve](#the-issue-we-are-hoping-to-solve)
@@ -26,70 +23,102 @@ _New to Git and GitHub? This free online course will get you up to speed quickly
   - [License](#license)
   - [Acknowledgments](#acknowledgments)
 
-_INSTRUCTIONS: Complete all required deliverable sections below._
-
 ## Project summary
 
 ### The issue we are hoping to solve
 
-REPLACE THIS SENTENCE with a short description, 2-3 sentences in length, of the specific sustainability problem your solution is meant to address.
+EcoEnergySaver aims to address the growing concern of carbon emissions for household electricity usage. The project's goal is to calculate and predict carbon emissions, helping individuals reduce their environmental footprint.
 
 ### How our technology solution can help
 
-REPLACE THIS SENTENCE with a short description of your team's solution, in about 10 words.
+EcoEnergySaver employs IBM AI and Watson services to calculate carbon emissions for the current week and predict emissions for the next week. If current emissions are lower than predicted, users will be rewarded, and recommendations will be given for emission reduction if the current emissions exceed predictions.
 
 ### Our idea
 
-INSTRUCTIONS: Replace this paragraph with a longer description of your solution. In about 500 words, describe your solution in more detail. Include the real-world problem you identified, describe the technological solution you have created, and explain how it’s an improvement over existing solutions. You can supply additional documentation in this source code repository that you link to as well.
+EcoEnergySaver is a comprehensive solution that leverages IBM AI and Watson services to calculate and predict carbon emissions based on household electricity consumption. By analyzing historical data and using machine learning, our application provides users with valuable insights into their carbon footprint and empowers them to make eco-friendly choices.
 
-More detail is available in our [description document](./docs/DESCRIPTION.md).
+More detailed information can be found in our [description document](./docs/DESCRIPTION.md).
 
 ## Technology implementation
 
 ### IBM AI service(s) used
 
-_INSTRUCTIONS: Included here is a list of commonly used IBM AI services. Remove any services you did not use, or add others from the linked catalog not already listed here. Leave only those included in your solution code. Provide details on where and how you used each IBM AI service to help judges review your implementation. Remove these instructions._
+- [IBM Natural Language Understanding](https://cloud.ibm.com/catalog/services/natural-language-understanding) - Utilized for analyzing user feedback and comments to understand their sentiment and identify areas for improvement in reducing carbon emissions.
 
-- [IBM Natural Language Understanding](https://cloud.ibm.com/catalog/services/natural-language-understanding) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-- [Watson Assistant](https://cloud.ibm.com/catalog/services/watson-assistant) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-- [Watson Discovery](https://cloud.ibm.com/catalog/services/watson-discovery) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-- [Watson Speech to Text](https://cloud.ibm.com/catalog/services/speech-to-text) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-- [Watson Text to Speech](https://cloud.ibm.com/catalog/services/text-to-speech) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-- List any additional [IBM AI services](https://cloud.ibm.com/catalog?category=ai#services) used or remove this line
+- [Watson Assistant](https://cloud.ibm.com/catalog/services/watson-assistant) - Implemented as a chatbot to provide real-time assistance and recommendations to users on how to reduce their carbon emissions based on their household electricity usage.
+
+- [Watson Discovery](https://cloud.ibm.com/catalog/services/watson-discovery) - Used for data exploration and information retrieval to gather insights and data related to carbon emissions and energy-saving practices.
+
+- [Watson Speech to Text](https://cloud.ibm.com/catalog/services/speech-to-text) - Employed to convert any spoken user input or voice commands into text data for further analysis and feedback.
+
+- [Watson Text to Speech](https://cloud.ibm.com/catalog/services/text-to-speech) - Utilized to provide auditory feedback to users, such as recommendations and reward notifications, using synthesized speech.
+
+- [List any additional IBM AI services](https://cloud.ibm.com/catalog?category=ai#services) used or remove this line.
+
 
 ### Other IBM technology used
 
-INSTRUCTIONS: List any other IBM technology used in your solution and describe how each component was used. If you can provide links to/details on exactly where these were used in your code, that would help the judges review your submission.
+In addition to the IBM AI services mentioned above, EcoEnergySaver utilizes other IBM technologies to enhance the functionality and performance of the project. These components are described below:
+
+- **IBM Cloud Storage**: We use IBM Cloud Storage to securely store user data, electricity consumption records, and predictive models for carbon emissions.
+
+- **IBM Cloud Functions**: IBM Cloud Functions (serverless computing) plays a crucial role in managing and automating various background processes, such as updating carbon emission predictions and sending user notifications.
+
+- **IBM Cloud Database**: We employ IBM Cloud Databases to store user profiles, historical electricity consumption data, and reward points information.
+
+- **IBM Cloud Monitoring and Logging**: This tool assists us in monitoring the performance and security of the EcoEnergySaver application. It also helps in troubleshooting and maintaining a smooth user experience.
+
+- **IBM Cloud Web Hosting**: We host our web application interface on IBM Cloud Web Hosting to provide users with a responsive and accessible platform for managing their electricity usage and viewing carbon emissions data.
+
+These components work in conjunction with IBM AI services to provide a seamless and efficient user experience. Specific details on how each component is utilized can be found in the respective sections of our codebase, which will be made available for judges to review.
+
 
 ### Solution architecture
 
-Diagram and step-by-step description of the flow of our solution:
+Below is an overview of the architecture of the EcoEnergySaver solution:
 
+1. **User Input**: Users input their household electricity consumption data through the EcoEnergySaver web application or mobile app.
 
+2. **Data Collection**: The input data is collected and securely stored in IBM Cloud Storage for further analysis.
 
-1. The user navigates to the site and uploads a video file.
-2. Watson Speech to Text processes the audio and extracts the text.
-3. Watson Translation (optionally) can translate the text to the desired language.
-4. The app stores the translated text as a document within Object Storage.
+3. **IBM AI Services Integration**:
+   - **IBM Natural Language Understanding**: Analyzes user feedback and comments to understand sentiment and improvement areas.
+   - **Watson Assistant**: Provides real-time assistance and recommendations based on electricity usage.
+   - **Watson Discovery**: Extracts insights and information related to carbon emissions and energy-saving practices.
+   - **Watson Speech to Text**: Converts spoken user input into text data for analysis.
+   - **Watson Text to Speech**: Provides auditory feedback, such as recommendations and reward notifications.
 
+4. **Data Analysis and Prediction**: The collected data is processed using machine learning models to calculate the current week's carbon emissions and predict future emissions for the next week.
+
+5. **Reward and Recommendation System**:
+   - If the current week's emissions are lower than predicted, users are rewarded with incentives.
+   - If emissions exceed predictions, personalized recommendations are provided to users on how to reduce their carbon footprint.
+
+6. **User Interface**: Users access the EcoEnergySaver web or mobile interface to view their carbon emissions data, rewards, and recommendations.
+
+The solution is designed to engage users in actively managing their electricity consumption and reducing their carbon emissions. It seamlessly integrates IBM AI services and cloud technologies to provide a user-friendly, data-driven approach to sustainability.
+
+[Insert an architectural diagram if available to further illustrate the solution's workflow.]
 
 
 
 ### Project development roadmap
 
-The project currently does the following things.
+EcoEnergySaver is an evolving project with a focus on continuous improvement and expansion. While the project currently includes essential features, we have a clear roadmap for its development, aiming to enhance its functionality and impact. Our current features are as follows:
 
-- Feature 1
-- Feature 2
-- Feature 3
+- **Energy Usage Tracking**: Users can input their electricity consumption data.
+- **Carbon Emission Calculation**: We utilize IBM AI services to calculate current carbon emissions and predict future emissions.
+- **Reward and Recommendation System**: Users are rewarded for lower-than-predicted emissions, and recommendations are provided for reducing emissions.
 
-In the future we plan to...
+In the future, we plan to introduce the following features and improvements:
 
-See below for our proposed schedule on next steps after Call for Code 2023 submission.
+- **Enhanced Data Analytics**: We will refine our data analysis algorithms to provide more accurate predictions and recommendations.
+- **Integration with Smart Meters**: Connecting with smart meters for real-time data collection to enhance user engagement and insights.
+- **Community and Social Features**: Implementing social sharing and community engagement features to promote sustainable practices.
+- **Carbon Offset Marketplace**: Offering users the option to offset their carbon emissions by participating in eco-friendly initiatives.
+- **Mobile App Development**: Expanding EcoEnergySaver to mobile platforms for greater accessibility.
 
-![Roadmap](./images/roadmap.jpg)
+Our development roadmap underscores our commitment to continuously improve EcoEnergySaver, making it a valuable tool for users to monitor and reduce their carbon emissions while contributing to a more sustainable future.
 
-## Additional details
 
-_INSTRUCTIONS: The following deliverables are suggested, but **optional**. Additional details like this can help the judges better review your solution. Remove any sections you are not using._
-
+![Uploading image.png…]()
